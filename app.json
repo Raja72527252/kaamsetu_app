@@ -1,25 +1,46 @@
 {
   "expo": {
-    "name": "kaamsetu1",
-    "slug": "kaamsetu1",
+    "name": "KaamSetu",
+    "slug": "kaamsetu",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "scheme": "kaamsetu",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.kaamsetu.app"
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
+        "backgroundColor": "#1E3A5F"
       },
-      "predictiveBackGestureEnabled": false
+      "package": "com.kaamsetu.app"
     },
     "web": {
+      "bundler": "metro",
+      "output": "static",
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "KaamSetu needs location to show nearby jobs and workers."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "KaamSetu needs photo access for your profile picture."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
     }
   }
 }
